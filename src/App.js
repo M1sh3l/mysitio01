@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Michel Quispe Flores 
+          Michel Flores 
         </a>
       </header>
     </div>
