@@ -1,23 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import AppForm from './componente/AppForm';
+import { CONSTANTS } from '@firebase/util';
+import { useState } from 'react';
 
 function App() {
+  /////////READ/////////////
+  const [idActual, setIdActual] =useState('');  //controlar el estado Actualiza/Elimina
+  const [docsBD, setDocsBD] =useState([]); 
+  const [orden, setOrden] =useState(0);
+
+  /////// LESTURA A BASE DE DATOS /////////////////
+  const fnRead = () => {
+    console.log("Lectura a base de datos");
+  }
+
+  ///////// ELIMINAR///////////////
+  const fnDelete = () => {
+    console.log("Eliminar un registro");
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Michel Flores 
-        </a>
-      </header>
+    <div style={{background:"greenyellow" , width:"350px"}}>
+      <h1>Sitio copia 2 (App.js) </h1>
+      <AppForm {...{idActual, setIdActual, fnRead}}/>
     </div>
   );
 }
