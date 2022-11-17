@@ -1,30 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-import AppForm from './componente/AppForm';
-import { CONSTANTS } from '@firebase/util';
-import { useState } from 'react';
+import { collection, onSnapshot, query, where } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import AppForm from "./componente/AppForm";
+import {db} from './componente/firebase';
+
 
 function App() {
-  /////////READ/////////////
-  const [idActual, setIdActual] =useState('');  //controlar el estado Actualiza/Elimina
-  const [docsBD, setDocsBD] =useState([]); 
-  const [orden, setOrden] =useState(0);
 
-  /////// LESTURA A BASE DE DATOS /////////////////
+  const [idActual, setIdActual]= useState('');
+  const [docsBD, setDocsBD] =useState([]);
+ 
+
+ <h1>HOLA</h1>
+//////LECTURA A BASE DE DATOS/////////////////////////
   const fnRead = () => {
-    console.log("Lectura a base de datos");
+    console.log("Lectura a BD");
   }
 
-  ///////// ELIMINAR///////////////
-  const fnDelete = () => {
+  const fnDelet = () => {
     console.log("Eliminar un registro");
   }
-
   return (
-    <div style={{background:"greenyellow" , width:"350px"}}>
-      <h1>Sitio copia 2 (App.js) </h1>
-      <AppForm {...{idActual, setIdActual, fnRead}}/>
-    </div>
+    <center><div style={{background:"#fad1a8"}}>
+      <AppForm{...{idActual,setIdActual,fnRead}}/>
+      
+    </div></center>
   );
 }
 
